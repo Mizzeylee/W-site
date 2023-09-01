@@ -1,0 +1,326 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: auto;
+  width: 1000px;
+}
+
+p,
+nav {
+  color: hsl(236, 13%, 42%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+  list-style: none;
+  align-items: center;
+  /* width was changed */
+}
+
+.navigation li:hover {
+  color: hsl(35, 77%, 62%);
+  cursor: pointer;
+}
+
+.gridA img {
+  position: absolute;
+}
+.brickimg-m {
+  display: none;
+}
+
+.gridC button {
+  display: block;
+  margin-top: 45px;
+  padding: 12px 35px 12px 35px;
+  border-radius: 0;
+  color: white;
+  background-color: hsl(5, 85%, 63%);
+  border: 1px solid hsl(5, 85%, 63%);
+  letter-spacing: 2px;
+}
+
+.gridC button:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.sideh2 {
+  color: hsl(35, 77%, 62%);
+  font-size: 35px;
+  margin: 20px 0px 20px 0px;
+}
+
+.sideh4 {
+  margin: 10px 0px 10px 0px;
+  color: hsl(36, 100%, 99%);
+}
+
+.sideh4:hover {
+  color: hsl(35, 77%, 62%);
+  cursor: pointer;
+}
+
+.line {
+  display: block;
+  border-top: 1px solid hsl(233, 8%, 79%);
+  margin: 30px 0px 30px 0px;
+}
+/* this id for the grid layout of objects */
+.brickimg-d {
+  width: 650px;
+  height: 230px;
+}
+
+.grid-area {
+  display: grid;
+  grid-template-areas:
+    "a a d"
+    "b c d";
+  gap: 15px;
+  box-sizing: border-box;
+  grid-auto-rows: 1fr;
+}
+.gridA {
+  grid-area: a;
+}
+
+.gridB {
+  grid-area: b;
+  width: 280px;
+  font-size: 23px;
+  margin-top: 40px;
+  height: 170px;
+  color: hsl(240, 100%, 5%);
+}
+
+.gridC {
+  grid-area: c;
+  width: 355px;
+  padding: 0 18px 0 18px;
+  margin-top: 45px;
+  height: 170px;
+}
+
+.gridD {
+  background-color: black;
+  grid-area: d;
+  padding: 0 20px 0 20px;
+  color: hsl(233, 8%, 79%);
+  height: 435px;
+}
+
+.gridD p {
+  color: hsl(233, 8%, 79%);
+}
+
+/* this is for the other news */
+
+.flex-area {
+  display: flex;
+  margin-top: 50px;
+}
+
+.other {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 13px;
+}
+.miniimg img {
+  width: 100px;
+}
+
+.miniinfo h3 {
+  color: hsl(233, 8%, 79%);
+  font-size: 50px;
+  margin-top: -10px;
+}
+
+.miniinfo h4 {
+  color: hsl(240, 100%, 5%);
+  margin-bottom: 10px;
+}
+
+.miniinfo h4:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+}
+
+/* side bar */
+.hamburger {
+  /* display: none; */
+  cursor: pointer;
+  width: 50%;
+  display: none;
+}
+
+.bar {
+  display: block;
+  border-top: 4px solid black;
+  margin: 5px;
+  width: 50px;
+  height: 5px;
+  color: hsl(240, 100%, 5%);
+}
+
+.navigation-m {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* first media  */
+@media (max-width: 430px) {
+  body {
+    width: 420px;
+    background-color: hsl(36, 100%, 99%);
+  }
+
+  .brickimg-d {
+    display: none;
+  }
+
+  .brickimg-m {
+    display: block;
+    width: 400px;
+  }
+
+  /* nav sidebar */
+
+  .logo img {
+    z-index: 1;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 2;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    position: absolute;
+    transition: 0.2s;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    position: absolute;
+    transition: 0.2s;
+  }
+  .navigation {
+    background-color: hsl(36, 100%, 99%);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    color: hsl(240, 100%, 5%);
+    text-align: start;
+    align-items: start;
+    height: 100vh;
+    width: 300px;
+    padding-top: 90px;
+    transition: 0.2s;
+    top: -100%;
+    left: 110px;
+  }
+
+  .navigation.active {
+    top: 0;
+  }
+
+  .navigation.active ul {
+    gap: 40px;
+  }
+
+  .navigation li {
+    margin-left: 20px;
+  }
+  /* layout */
+
+  .grid-area {
+    display: grid;
+    grid-template-areas:
+      "a "
+      "b "
+      "c"
+      "d";
+    gap: 0px;
+    box-sizing: border-box;
+  }
+
+  .gridB {
+    margin-top: 60px;
+    height: 170px;
+    width: 400px;
+  }
+
+  .gridC {
+    margin-top: -90px;
+    width: 400px;
+    line-height: 30px;
+    font-size: 20px;
+    height: 200px;
+  }
+
+  .gridC p {
+    margin-left: -15px;
+  }
+
+  .gridC button {
+    margin-top: 20px;
+    padding: 10px 50px 10px 50x;
+    width: 200px;
+    letter-spacing: 5px;
+  }
+
+  .gridD {
+    margin-top: -150px;
+    width: 400px;
+  }
+
+  /* flex area */
+
+  .flex-area {
+    flex-direction: column;
+    width: 400px;
+    margin-top: 50px;
+  }
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 50px;
+  background-color: black;
+  color: white;
+}
+.attribution a {
+  color: hsl(35, 77%, 62%);
+}
